@@ -51,7 +51,7 @@
             this.tabPage3.ItemSize = new System.Drawing.Size(44, 135);
             this.tabPage3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
             this.tabPage3.LineTabColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
-            this.tabPage3.Location = new System.Drawing.Point(162, 171);
+            this.tabPage3.Location = new System.Drawing.Point(8, 8);
             this.tabPage3.Multiline = true;
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(162)))), ((int)(((byte)(167)))));
@@ -88,7 +88,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(685, 495);
+            this.ClientSize = new System.Drawing.Size(1065, 495);
             this.Controls.Add(this.tabPage3);
             this.Name = "mainForm";
             this.Text = "Form1";

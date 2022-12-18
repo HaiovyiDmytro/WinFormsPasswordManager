@@ -59,25 +59,5 @@ namespace WinPassManager {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Windows.Forms.ImageListStreamer.
-        /// </summary>
-        internal static System.Windows.Forms.ImageListStreamer loginFormImageList_ImageStream {
-            get {
-                object obj = ResourceManager.GetObject("loginFormImageList.ImageStream", resourceCulture);
-                return ((System.Windows.Forms.ImageListStreamer)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Point similar to {X=17,Y=17}.
-        /// </summary>
-        internal static System.Drawing.Point loginFormImageList_TrayLocation {
-            get {
-                object obj = ResourceManager.GetObject("loginFormImageList.TrayLocation", resourceCulture);
-                return ((System.Drawing.Point)(obj));
-            }
-        }
     }
 }
