@@ -1,6 +1,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+using WinPassManager.Services;
+
 using WPManager.Services;
 
 namespace WPManager
@@ -29,6 +31,8 @@ namespace WPManager
                 .ConfigureServices((context, services) => {
                     _ = services.AddScoped<IDirectoryService, DirectoryService>();
                     _ = services.AddScoped<IFileService, FileService>();
+                    _ = services.AddScoped<ISecretHasherService, SecretHasherService>();
+                    _ = services.AddScoped<IINIFileService, INIFileService>();
                     _ = services.AddTransient<loginForm>();
                     _ = services.AddTransient<mainForm>();
                 });
