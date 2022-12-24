@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WinPassManager {
+namespace PasswordManager {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace WinPassManager {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WinPassManager.loginForm", typeof(loginForm).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PasswordManager.loginForm", typeof(loginForm).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

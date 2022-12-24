@@ -18,6 +18,8 @@ namespace WPManager
         private string _userLocalDataPath { get; set; } = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
         private string _appDataPath { get; set; }
         private string _appLoginCredentialsFilePath { get; set; }
+        private string _hashedLogin { get; set; }
+        private string _hashedPassword { get; set; }
 
         private readonly IDirectoryService _directoryService;
         private readonly IFileService _fileService;
@@ -25,15 +27,15 @@ namespace WPManager
         private readonly IINIFileService _INIFileService;
         private readonly mainForm _mainForm;
 
-        private ReaLTaiizor.Controls.ForeverTextBox txtEmailRegister;
+        private ReaLTaiizor.Controls.ForeverTextBox txtUserNameRegister;
         private ReaLTaiizor.Controls.ForeverTextBox txtPasswordRegister;
         private ReaLTaiizor.Controls.ForeverTextBox txtConfirmPasswordRegister;
-        private Label lblEmailLogin;
+        private Label lblUserNameLogin;
         private Label lblPasswordLogin;
         private Label lblConfirmPasswordRegister;
         private Label lblPasswordRegister;
-        private Label lblEmailRegister;
-        private ReaLTaiizor.Controls.ForeverTextBox txtEmailLogin;
+        private Label lblUserNameRegister;
+        private ReaLTaiizor.Controls.ForeverTextBox txtUserNameLogin;
         private ReaLTaiizor.Controls.ForeverTextBox txtPasswordLogin;
         private ReaLTaiizor.Controls.Button btnLogin;
         private ReaLTaiizor.Controls.Button btnCancelLogin;
@@ -41,6 +43,8 @@ namespace WPManager
         private ReaLTaiizor.Controls.Button btnRegister;
         private readonly System.ComponentModel.IContainer components;
         private Label lblErrorMessageLogin;
+        private ReaLTaiizor.Controls.Button btnResetPassword;
+        private Label lblForgetMessage;
         private Label lblErrorMessageRegister;
 
 #pragma warning disable CS8618
@@ -98,12 +102,14 @@ namespace WPManager
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(loginForm));
             this.loginTabContainer = new ReaLTaiizor.Controls.AirTabPage();
             this.loginTabPage = new System.Windows.Forms.TabPage();
+            this.btnResetPassword = new ReaLTaiizor.Controls.Button();
+            this.lblForgetMessage = new System.Windows.Forms.Label();
             this.lblErrorMessageLogin = new System.Windows.Forms.Label();
             this.btnLogin = new ReaLTaiizor.Controls.Button();
             this.btnCancelLogin = new ReaLTaiizor.Controls.Button();
-            this.txtEmailLogin = new ReaLTaiizor.Controls.ForeverTextBox();
+            this.txtUserNameLogin = new ReaLTaiizor.Controls.ForeverTextBox();
             this.txtPasswordLogin = new ReaLTaiizor.Controls.ForeverTextBox();
-            this.lblEmailLogin = new System.Windows.Forms.Label();
+            this.lblUserNameLogin = new System.Windows.Forms.Label();
             this.lblPasswordLogin = new System.Windows.Forms.Label();
             this.registerTabPage = new System.Windows.Forms.TabPage();
             this.lblErrorMessageRegister = new System.Windows.Forms.Label();
@@ -111,8 +117,8 @@ namespace WPManager
             this.btnRegister = new ReaLTaiizor.Controls.Button();
             this.lblConfirmPasswordRegister = new System.Windows.Forms.Label();
             this.lblPasswordRegister = new System.Windows.Forms.Label();
-            this.lblEmailRegister = new System.Windows.Forms.Label();
-            this.txtEmailRegister = new ReaLTaiizor.Controls.ForeverTextBox();
+            this.lblUserNameRegister = new System.Windows.Forms.Label();
+            this.txtUserNameRegister = new ReaLTaiizor.Controls.ForeverTextBox();
             this.txtPasswordRegister = new ReaLTaiizor.Controls.ForeverTextBox();
             this.txtConfirmPasswordRegister = new ReaLTaiizor.Controls.ForeverTextBox();
             this.loginTabContainer.SuspendLayout();
@@ -141,12 +147,14 @@ namespace WPManager
             // 
             this.loginTabPage.BackColor = System.Drawing.Color.White;
             this.loginTabPage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.loginTabPage.Controls.Add(this.btnResetPassword);
+            this.loginTabPage.Controls.Add(this.lblForgetMessage);
             this.loginTabPage.Controls.Add(this.lblErrorMessageLogin);
             this.loginTabPage.Controls.Add(this.btnLogin);
             this.loginTabPage.Controls.Add(this.btnCancelLogin);
-            this.loginTabPage.Controls.Add(this.txtEmailLogin);
+            this.loginTabPage.Controls.Add(this.txtUserNameLogin);
             this.loginTabPage.Controls.Add(this.txtPasswordLogin);
-            this.loginTabPage.Controls.Add(this.lblEmailLogin);
+            this.loginTabPage.Controls.Add(this.lblUserNameLogin);
             this.loginTabPage.Controls.Add(this.lblPasswordLogin);
             this.loginTabPage.Location = new System.Drawing.Point(119, 4);
             this.loginTabPage.Name = "loginTabPage";
@@ -155,6 +163,33 @@ namespace WPManager
             this.loginTabPage.TabIndex = 0;
             this.loginTabPage.Text = "Login";
             // 
+            // btnResetPassword
+            // 
+            this.btnResetPassword.BackColor = System.Drawing.Color.Transparent;
+            this.btnResetPassword.EnteredColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.btnResetPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnResetPassword.Image = null;
+            this.btnResetPassword.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnResetPassword.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.btnResetPassword.Location = new System.Drawing.Point(272, 112);
+            this.btnResetPassword.Name = "btnResetPassword";
+            this.btnResetPassword.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.btnResetPassword.Size = new System.Drawing.Size(160, 32);
+            this.btnResetPassword.TabIndex = 8;
+            this.btnResetPassword.Text = "Reset password!";
+            this.btnResetPassword.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
+            // 
+            // lblForgetMessage
+            // 
+            this.lblForgetMessage.AutoSize = true;
+            this.lblForgetMessage.ForeColor = System.Drawing.Color.Blue;
+            this.lblForgetMessage.Location = new System.Drawing.Point(8, 120);
+            this.lblForgetMessage.Name = "lblForgetMessage";
+            this.lblForgetMessage.Size = new System.Drawing.Size(255, 15);
+            this.lblForgetMessage.TabIndex = 7;
+            this.lblForgetMessage.Text = "Forgot your password? Click the \'Reset\' button.";
+            // 
             // lblErrorMessageLogin
             // 
             this.lblErrorMessageLogin.AutoSize = true;
@@ -162,7 +197,7 @@ namespace WPManager
             this.lblErrorMessageLogin.Location = new System.Drawing.Point(8, 88);
             this.lblErrorMessageLogin.Name = "lblErrorMessageLogin";
             this.lblErrorMessageLogin.Size = new System.Drawing.Size(84, 15);
-            this.lblErrorMessageLogin.TabIndex = 19;
+            this.lblErrorMessageLogin.TabIndex = 6;
             this.lblErrorMessageLogin.Text = "ErrorMessage: ";
             // 
             // btnLogin
@@ -199,22 +234,22 @@ namespace WPManager
             this.btnCancelLogin.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnCancelLogin.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // txtEmailLogin
+            // txtUserNameLogin
             // 
-            this.txtEmailLogin.BackColor = System.Drawing.Color.Transparent;
-            this.txtEmailLogin.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
-            this.txtEmailLogin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.txtEmailLogin.FocusOnHover = false;
-            this.txtEmailLogin.ForeColor = System.Drawing.Color.Yellow;
-            this.txtEmailLogin.Location = new System.Drawing.Point(120, 8);
-            this.txtEmailLogin.MaxLength = 32767;
-            this.txtEmailLogin.Multiline = false;
-            this.txtEmailLogin.Name = "txtEmailLogin";
-            this.txtEmailLogin.ReadOnly = false;
-            this.txtEmailLogin.Size = new System.Drawing.Size(312, 29);
-            this.txtEmailLogin.TabIndex = 0;
-            this.txtEmailLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtEmailLogin.UseSystemPasswordChar = false;
+            this.txtUserNameLogin.BackColor = System.Drawing.Color.Transparent;
+            this.txtUserNameLogin.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
+            this.txtUserNameLogin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.txtUserNameLogin.FocusOnHover = false;
+            this.txtUserNameLogin.ForeColor = System.Drawing.Color.Yellow;
+            this.txtUserNameLogin.Location = new System.Drawing.Point(120, 8);
+            this.txtUserNameLogin.MaxLength = 32767;
+            this.txtUserNameLogin.Multiline = false;
+            this.txtUserNameLogin.Name = "txtUserNameLogin";
+            this.txtUserNameLogin.ReadOnly = false;
+            this.txtUserNameLogin.Size = new System.Drawing.Size(312, 29);
+            this.txtUserNameLogin.TabIndex = 0;
+            this.txtUserNameLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtUserNameLogin.UseSystemPasswordChar = false;
             // 
             // txtPasswordLogin
             // 
@@ -233,14 +268,14 @@ namespace WPManager
             this.txtPasswordLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtPasswordLogin.UseSystemPasswordChar = false;
             // 
-            // lblEmailLogin
+            // lblUserNameLogin
             // 
-            this.lblEmailLogin.AutoSize = true;
-            this.lblEmailLogin.Location = new System.Drawing.Point(8, 16);
-            this.lblEmailLogin.Name = "lblEmailLogin";
-            this.lblEmailLogin.Size = new System.Drawing.Size(105, 15);
-            this.lblEmailLogin.TabIndex = 14;
-            this.lblEmailLogin.Text = "UserName (Email):";
+            this.lblUserNameLogin.AutoSize = true;
+            this.lblUserNameLogin.Location = new System.Drawing.Point(8, 16);
+            this.lblUserNameLogin.Name = "lblUserNameLogin";
+            this.lblUserNameLogin.Size = new System.Drawing.Size(105, 15);
+            this.lblUserNameLogin.TabIndex = 4;
+            this.lblUserNameLogin.Text = "UserName (Email):";
             // 
             // lblPasswordLogin
             // 
@@ -248,7 +283,7 @@ namespace WPManager
             this.lblPasswordLogin.Location = new System.Drawing.Point(56, 56);
             this.lblPasswordLogin.Name = "lblPasswordLogin";
             this.lblPasswordLogin.Size = new System.Drawing.Size(60, 15);
-            this.lblPasswordLogin.TabIndex = 13;
+            this.lblPasswordLogin.TabIndex = 5;
             this.lblPasswordLogin.Text = "Password:";
             // 
             // registerTabPage
@@ -260,8 +295,8 @@ namespace WPManager
             this.registerTabPage.Controls.Add(this.btnRegister);
             this.registerTabPage.Controls.Add(this.lblConfirmPasswordRegister);
             this.registerTabPage.Controls.Add(this.lblPasswordRegister);
-            this.registerTabPage.Controls.Add(this.lblEmailRegister);
-            this.registerTabPage.Controls.Add(this.txtEmailRegister);
+            this.registerTabPage.Controls.Add(this.lblUserNameRegister);
+            this.registerTabPage.Controls.Add(this.txtUserNameRegister);
             this.registerTabPage.Controls.Add(this.txtPasswordRegister);
             this.registerTabPage.Controls.Add(this.txtConfirmPasswordRegister);
             this.registerTabPage.Location = new System.Drawing.Point(119, 4);
@@ -278,7 +313,7 @@ namespace WPManager
             this.lblErrorMessageRegister.Location = new System.Drawing.Point(8, 128);
             this.lblErrorMessageRegister.Name = "lblErrorMessageRegister";
             this.lblErrorMessageRegister.Size = new System.Drawing.Size(84, 15);
-            this.lblErrorMessageRegister.TabIndex = 17;
+            this.lblErrorMessageRegister.TabIndex = 8;
             this.lblErrorMessageRegister.Text = "ErrorMessage: ";
             // 
             // btnCancelRegister
@@ -321,7 +356,7 @@ namespace WPManager
             this.lblConfirmPasswordRegister.Location = new System.Drawing.Point(8, 96);
             this.lblConfirmPasswordRegister.Name = "lblConfirmPasswordRegister";
             this.lblConfirmPasswordRegister.Size = new System.Drawing.Size(107, 15);
-            this.lblConfirmPasswordRegister.TabIndex = 14;
+            this.lblConfirmPasswordRegister.TabIndex = 7;
             this.lblConfirmPasswordRegister.Text = "Confirm password:";
             // 
             // lblPasswordRegister
@@ -330,34 +365,34 @@ namespace WPManager
             this.lblPasswordRegister.Location = new System.Drawing.Point(56, 56);
             this.lblPasswordRegister.Name = "lblPasswordRegister";
             this.lblPasswordRegister.Size = new System.Drawing.Size(60, 15);
-            this.lblPasswordRegister.TabIndex = 13;
+            this.lblPasswordRegister.TabIndex = 6;
             this.lblPasswordRegister.Text = "Password:";
             // 
-            // lblEmailRegister
+            // lblUserNameRegister
             // 
-            this.lblEmailRegister.AutoSize = true;
-            this.lblEmailRegister.Location = new System.Drawing.Point(8, 16);
-            this.lblEmailRegister.Name = "lblEmailRegister";
-            this.lblEmailRegister.Size = new System.Drawing.Size(105, 15);
-            this.lblEmailRegister.TabIndex = 12;
-            this.lblEmailRegister.Text = "UserName (Email):";
+            this.lblUserNameRegister.AutoSize = true;
+            this.lblUserNameRegister.Location = new System.Drawing.Point(8, 16);
+            this.lblUserNameRegister.Name = "lblUserNameRegister";
+            this.lblUserNameRegister.Size = new System.Drawing.Size(105, 15);
+            this.lblUserNameRegister.TabIndex = 5;
+            this.lblUserNameRegister.Text = "UserName (Email):";
             // 
-            // txtEmailRegister
+            // txtUserNameRegister
             // 
-            this.txtEmailRegister.BackColor = System.Drawing.Color.Transparent;
-            this.txtEmailRegister.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
-            this.txtEmailRegister.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.txtEmailRegister.FocusOnHover = false;
-            this.txtEmailRegister.ForeColor = System.Drawing.Color.Yellow;
-            this.txtEmailRegister.Location = new System.Drawing.Point(120, 8);
-            this.txtEmailRegister.MaxLength = 32767;
-            this.txtEmailRegister.Multiline = false;
-            this.txtEmailRegister.Name = "txtEmailRegister";
-            this.txtEmailRegister.ReadOnly = false;
-            this.txtEmailRegister.Size = new System.Drawing.Size(312, 29);
-            this.txtEmailRegister.TabIndex = 0;
-            this.txtEmailRegister.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtEmailRegister.UseSystemPasswordChar = false;
+            this.txtUserNameRegister.BackColor = System.Drawing.Color.Transparent;
+            this.txtUserNameRegister.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
+            this.txtUserNameRegister.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.txtUserNameRegister.FocusOnHover = false;
+            this.txtUserNameRegister.ForeColor = System.Drawing.Color.Yellow;
+            this.txtUserNameRegister.Location = new System.Drawing.Point(120, 8);
+            this.txtUserNameRegister.MaxLength = 32767;
+            this.txtUserNameRegister.Multiline = false;
+            this.txtUserNameRegister.Name = "txtUserNameRegister";
+            this.txtUserNameRegister.ReadOnly = false;
+            this.txtUserNameRegister.Size = new System.Drawing.Size(312, 29);
+            this.txtUserNameRegister.TabIndex = 0;
+            this.txtUserNameRegister.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtUserNameRegister.UseSystemPasswordChar = false;
             // 
             // txtPasswordRegister
             // 
@@ -416,11 +451,36 @@ namespace WPManager
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            var loginModel = GetLoginModel();
+            if (!ModelState.IsValid(loginModel))
+            {
+                SetLblErrorMessageValue(lblErrorMessageLogin, true, 
+                    string.Concat("ErrorMessage: ", ModelState.ErrorMessages.FirstOrDefault()));
+                return;
+            }
+
+            _hashedLogin = _INIFileService.IniReadValue(
+                _credentialsFileExtension, nameof(_hashedLogin), _appLoginCredentialsFilePath);
+            _hashedPassword = _INIFileService.IniReadValue(
+                _credentialsFileExtension, nameof(_hashedPassword), _appLoginCredentialsFilePath);
+            if (!_secretHasherService.Verify(txtUserNameLogin.Text, _hashedLogin) ||
+                !_secretHasherService.Verify(txtPasswordLogin.Text, _hashedPassword))
+            {
+                SetLblErrorMessageValue(lblErrorMessageLogin, true, 
+                    string.Concat("ErrorMessage: ", "UserName (Email) or password is incorrect!"));
+                return;
+            }
+
+            SetLblErrorMessageValue(lblErrorMessageLogin, false, null);
+
+            this.Hide();
+            _ = _mainForm.ShowDialog();
+            this.Close();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -428,42 +488,58 @@ namespace WPManager
             var registerModel = GetRegisterModel();
             if (!ModelState.IsValid(registerModel))
             {
-                SetLblErrorMessageValue(true, string.Concat("ErrorMessage: ", ModelState.ErrorMessages.FirstOrDefault()));
+                SetLblErrorMessageValue(lblErrorMessageRegister, true, 
+                    string.Concat("ErrorMessage: ", ModelState.ErrorMessages.FirstOrDefault()));
                 return;
             }
             if (!string.Equals(txtPasswordRegister.Text, txtConfirmPasswordRegister.Text))
             {
-                SetLblErrorMessageValue(true, string.Concat("ErrorMessage: ", "ConfirmPassword text is incorrect!"));
+                SetLblErrorMessageValue(lblErrorMessageRegister, 
+                    true, string.Concat("ErrorMessage: ", "ConfirmPassword text is incorrect!"));
                 return;
             }
-            SetLblErrorMessageValue(false, null);
+            SetLblErrorMessageValue(lblErrorMessageRegister, false, null);
 
-            string hashedLogin = _secretHasherService.Hash(txtEmailRegister.Text);
-            string hashedPassword = _secretHasherService.Hash(txtPasswordRegister.Text);
+            _hashedLogin = _secretHasherService.Hash(txtUserNameRegister.Text);
+            _hashedPassword = _secretHasherService.Hash(txtPasswordRegister.Text);
             _INIFileService.IniWriteValue(
-                _credentialsFileExtension, nameof(hashedLogin), hashedLogin, _appLoginCredentialsFilePath);
+                _credentialsFileExtension, nameof(_hashedLogin), _hashedLogin, _appLoginCredentialsFilePath);
             _INIFileService.IniWriteValue(
-                _credentialsFileExtension, nameof(hashedPassword), hashedPassword, _appLoginCredentialsFilePath);
+                _credentialsFileExtension, nameof(_hashedPassword), _hashedPassword, _appLoginCredentialsFilePath);
 
-            Hide();
+            this.Hide();
             _ = _mainForm.ShowDialog();
-            Close();
+            this.Close();
         }
 
-        private void SetLblErrorMessageValue(bool enabled, string? text)
+        private void SetLblErrorMessageValue(Label errorLabel, bool visible, string? text)
         {
-            lblErrorMessageRegister.Visible = enabled;
-            lblErrorMessageRegister.Text = text;
+            errorLabel.Visible = visible;
+            errorLabel.Text = text;
         }
 
         private Register GetRegisterModel()
         {
             return new Register()
             {
-                UserName = txtEmailRegister.Text,
+                UserName = txtUserNameRegister.Text,
                 Password = txtPasswordRegister.Text,
                 ConfirmPassword = txtConfirmPasswordRegister.Text
             };
+        }
+
+        private Login GetLoginModel()
+        {
+            return new Login()
+            {
+                UserName = txtUserNameLogin.Text,
+                Password = txtPasswordLogin.Text
+            };
+        }
+
+        private void btnResetPassword_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
