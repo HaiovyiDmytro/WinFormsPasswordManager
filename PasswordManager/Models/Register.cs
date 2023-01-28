@@ -2,7 +2,7 @@
 
 namespace WinPassManager.Models
 {
-    public class Register : Login
+    internal class Register : Login
     {
         [Required(AllowEmptyStrings = false, ErrorMessage = "Field 'ConfirmPassword' cannot be empty.")]
         [Display(Name = "ConfirmPassword")]

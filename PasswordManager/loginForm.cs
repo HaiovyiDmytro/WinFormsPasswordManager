@@ -3,16 +3,17 @@
 using WinPassManager.Models;
 using WinPassManager.Services;
 
-using WPManager.Services;
+using PasswordManager.Services;
 
-namespace WPManager
+namespace PasswordManager
 {
-    public partial class loginForm : Form
+    internal partial class loginForm : Form
     {
         private ReaLTaiizor.Controls.AirTabPage loginTabContainer;
         private TabPage loginTabPage;
         private TabPage registerTabPage;
 
+        private string _workflowFileExtension { get; set; } = "workflow";
         private string _credentialsFileExtension { get; set; } = "credentials";
         private string _currentProcessName { get; set; } = System.Diagnostics.Process.GetCurrentProcess().ProcessName;
         private string _userLocalDataPath { get; set; } = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
@@ -41,22 +42,17 @@ namespace WPManager
         private ReaLTaiizor.Controls.Button btnCancelLogin;
         private ReaLTaiizor.Controls.Button btnCancelRegister;
         private ReaLTaiizor.Controls.Button btnRegister;
-        private readonly System.ComponentModel.IContainer components;
         private Label lblErrorMessageLogin;
         private ReaLTaiizor.Controls.Button btnResetPassword;
         private Label lblForgetMessage;
         private Label lblErrorMessageRegister;
 
-#pragma warning disable CS8618
-        // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public loginForm(
             IDirectoryService directoryService,
             IFileService fileService,
             ISecretHasherService secretHasherService,
             IINIFileService INIFileService,
             mainForm mainForm)
-#pragma warning restore CS8618
-        // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
             InitializeComponent();
 
@@ -175,7 +171,7 @@ namespace WPManager
             this.btnResetPassword.Name = "btnResetPassword";
             this.btnResetPassword.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.btnResetPassword.Size = new System.Drawing.Size(160, 32);
-            this.btnResetPassword.TabIndex = 8;
+            this.btnResetPassword.TabIndex = 4;
             this.btnResetPassword.Text = "Reset password!";
             this.btnResetPassword.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
@@ -187,7 +183,7 @@ namespace WPManager
             this.lblForgetMessage.Location = new System.Drawing.Point(8, 120);
             this.lblForgetMessage.Name = "lblForgetMessage";
             this.lblForgetMessage.Size = new System.Drawing.Size(255, 15);
-            this.lblForgetMessage.TabIndex = 7;
+            this.lblForgetMessage.TabIndex = 8;
             this.lblForgetMessage.Text = "Forgot your password? Click the \'Reset\' button.";
             // 
             // lblErrorMessageLogin
@@ -197,7 +193,7 @@ namespace WPManager
             this.lblErrorMessageLogin.Location = new System.Drawing.Point(8, 88);
             this.lblErrorMessageLogin.Name = "lblErrorMessageLogin";
             this.lblErrorMessageLogin.Size = new System.Drawing.Size(84, 15);
-            this.lblErrorMessageLogin.TabIndex = 6;
+            this.lblErrorMessageLogin.TabIndex = 7;
             this.lblErrorMessageLogin.Text = "ErrorMessage: ";
             // 
             // btnLogin
@@ -274,7 +270,7 @@ namespace WPManager
             this.lblUserNameLogin.Location = new System.Drawing.Point(8, 16);
             this.lblUserNameLogin.Name = "lblUserNameLogin";
             this.lblUserNameLogin.Size = new System.Drawing.Size(105, 15);
-            this.lblUserNameLogin.TabIndex = 4;
+            this.lblUserNameLogin.TabIndex = 5;
             this.lblUserNameLogin.Text = "UserName (Email):";
             // 
             // lblPasswordLogin
@@ -283,7 +279,7 @@ namespace WPManager
             this.lblPasswordLogin.Location = new System.Drawing.Point(56, 56);
             this.lblPasswordLogin.Name = "lblPasswordLogin";
             this.lblPasswordLogin.Size = new System.Drawing.Size(60, 15);
-            this.lblPasswordLogin.TabIndex = 5;
+            this.lblPasswordLogin.TabIndex = 6;
             this.lblPasswordLogin.Text = "Password:";
             // 
             // registerTabPage
@@ -479,6 +475,8 @@ namespace WPManager
             SetLblErrorMessageValue(lblErrorMessageLogin, false, null);
 
             this.Hide();
+            _mainForm.AppDataPath = _appDataPath;
+            _mainForm.AppWorkflowFilePath = Path.Combine(_appDataPath, string.Concat(_currentProcessName, ".", _workflowFileExtension));
             _ = _mainForm.ShowDialog();
             this.Close();
         }
@@ -508,6 +506,8 @@ namespace WPManager
                 _credentialsFileExtension, nameof(_hashedPassword), _hashedPassword, _appLoginCredentialsFilePath);
 
             this.Hide();
+            _mainForm.AppDataPath = _appDataPath;
+            _mainForm.AppWorkflowFilePath = Path.Combine(_appDataPath, string.Concat(_currentProcessName, ".", _workflowFileExtension));
             _ = _mainForm.ShowDialog();
             this.Close();
         }

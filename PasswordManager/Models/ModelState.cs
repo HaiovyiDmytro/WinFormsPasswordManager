@@ -2,7 +2,7 @@
 
 namespace WinPassManager.Models
 {
-    public static class ModelState
+    internal static class ModelState
     {
         public static List<string?> ErrorMessages = new();
 

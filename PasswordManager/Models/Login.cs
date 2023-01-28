@@ -2,7 +2,7 @@
 
 namespace WinPassManager.Models
 {
-    public class Login
+    internal class Login
     {
         [Required(AllowEmptyStrings = false, ErrorMessage = "Field 'UserName' cannot be empty.")]
         [Display(Name = "UserName")]

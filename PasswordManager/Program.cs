@@ -3,9 +3,9 @@ using Microsoft.Extensions.Hosting;
 
 using WinPassManager.Services;
 
-using WPManager.Services;
+using PasswordManager.Services;
 
-namespace WPManager
+namespace PasswordManager
 {
     internal static class Program
     {
