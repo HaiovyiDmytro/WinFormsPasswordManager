@@ -28,370 +28,345 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
-            this.mainLayoutTabPage = new ReaLTaiizor.Controls.TabPage();
-            this.mainLayout = new System.Windows.Forms.TabPage();
-            this.mainPanel = new System.Windows.Forms.Panel();
-            this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.btnMoveFirst = new System.Windows.Forms.ToolStripButton();
-            this.btnMovePrevious = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.txtFindRecord = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnMoveLast = new System.Windows.Forms.ToolStripButton();
-            this.btnMoveNext = new System.Windows.Forms.ToolStripButton();
-            this.btnFind = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.workSpaceDataGridView = new System.Windows.Forms.DataGridView();
-            this.ResourceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Link = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.dgvContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.mnuCopyLogin = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuCopyPassword = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuCopyLink = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator_1 = new System.Windows.Forms.ToolStripSeparator();
-            this.mnuInsert = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuAdd = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuEdit = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator_0 = new System.Windows.Forms.ToolStripSeparator();
-            this.mnuDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsLayout = new System.Windows.Forms.TabPage();
-            this.aboutSpace = new System.Windows.Forms.TabPage();
-            this.exit = new System.Windows.Forms.TabPage();
-            this.mainLayoutTabPage.SuspendLayout();
-            this.mainLayout.SuspendLayout();
-            this.mainPanel.SuspendLayout();
-            this.toolStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.workSpaceDataGridView)).BeginInit();
-            this.dgvContextMenuStrip.SuspendLayout();
-            this.SuspendLayout();
+            mainLayoutTabPage = new ReaLTaiizor.Controls.TabPage();
+            mainLayout = new TabPage();
+            mainPanel = new Panel();
+            toolStrip = new ToolStrip();
+            btnMoveFirst = new ToolStripButton();
+            btnMovePrevious = new ToolStripButton();
+            toolStripSeparator1 = new ToolStripSeparator();
+            txtFindRecord = new ToolStripTextBox();
+            toolStripSeparator2 = new ToolStripSeparator();
+            btnMoveLast = new ToolStripButton();
+            btnMoveNext = new ToolStripButton();
+            btnFind = new ToolStripButton();
+            toolStripSeparator3 = new ToolStripSeparator();
+            workSpaceDataGridView = new DataGridView();
+            ResourceName = new DataGridViewTextBoxColumn();
+            Login = new DataGridViewTextBoxColumn();
+            Password = new DataGridViewTextBoxColumn();
+            Link = new DataGridViewLinkColumn();
+            dgvContextMenuStrip = new ContextMenuStrip(components);
+            mnuCopyLogin = new ToolStripMenuItem();
+            mnuCopyPassword = new ToolStripMenuItem();
+            mnuCopyLink = new ToolStripMenuItem();
+            toolStripSeparator_1 = new ToolStripSeparator();
+            mnuInsert = new ToolStripMenuItem();
+            mnuAdd = new ToolStripMenuItem();
+            mnuEdit = new ToolStripMenuItem();
+            toolStripSeparator_0 = new ToolStripSeparator();
+            mnuDelete = new ToolStripMenuItem();
+            settingsLayout = new TabPage();
+            aboutSpace = new TabPage();
+            exit = new TabPage();
+            mainLayoutTabPage.SuspendLayout();
+            mainLayout.SuspendLayout();
+            mainPanel.SuspendLayout();
+            toolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)workSpaceDataGridView).BeginInit();
+            dgvContextMenuStrip.SuspendLayout();
+            SuspendLayout();
             // 
             // mainLayoutTabPage
             // 
-            this.mainLayoutTabPage.ActiveForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.mainLayoutTabPage.ActiveLineTabColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(169)))), ((int)(((byte)(222)))));
-            this.mainLayoutTabPage.ActiveTabColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(36)))), ((int)(((byte)(38)))));
-            this.mainLayoutTabPage.Alignment = System.Windows.Forms.TabAlignment.Left;
-            this.mainLayoutTabPage.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighSpeed;
-            this.mainLayoutTabPage.CompositingType = System.Drawing.Drawing2D.CompositingMode.SourceOver;
-            this.mainLayoutTabPage.ControlBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
-            this.mainLayoutTabPage.Controls.Add(this.mainLayout);
-            this.mainLayoutTabPage.Controls.Add(this.settingsLayout);
-            this.mainLayoutTabPage.Controls.Add(this.aboutSpace);
-            this.mainLayoutTabPage.Controls.Add(this.exit);
-            this.mainLayoutTabPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainLayoutTabPage.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.mainLayoutTabPage.FrameColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(50)))), ((int)(((byte)(63)))));
-            this.mainLayoutTabPage.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
-            this.mainLayoutTabPage.ItemSize = new System.Drawing.Size(44, 135);
-            this.mainLayoutTabPage.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(28)))));
-            this.mainLayoutTabPage.LineTabColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
-            this.mainLayoutTabPage.Location = new System.Drawing.Point(0, 0);
-            this.mainLayoutTabPage.Multiline = true;
-            this.mainLayoutTabPage.Name = "mainLayoutTabPage";
-            this.mainLayoutTabPage.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(162)))), ((int)(((byte)(167)))));
-            this.mainLayoutTabPage.PageColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(63)))), ((int)(((byte)(74)))));
-            this.mainLayoutTabPage.SelectedIndex = 0;
-            this.mainLayoutTabPage.Size = new System.Drawing.Size(884, 461);
-            this.mainLayoutTabPage.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.mainLayoutTabPage.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighSpeed;
-            this.mainLayoutTabPage.StringType = System.Drawing.StringAlignment.Near;
-            this.mainLayoutTabPage.TabColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
-            this.mainLayoutTabPage.TabIndex = 0;
+            mainLayoutTabPage.ActiveForeColor = Color.FromArgb(254, 255, 255);
+            mainLayoutTabPage.ActiveLineTabColor = Color.FromArgb(89, 169, 222);
+            mainLayoutTabPage.ActiveTabColor = Color.FromArgb(35, 36, 38);
+            mainLayoutTabPage.Alignment = TabAlignment.Left;
+            mainLayoutTabPage.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighSpeed;
+            mainLayoutTabPage.CompositingType = System.Drawing.Drawing2D.CompositingMode.SourceOver;
+            mainLayoutTabPage.ControlBackColor = Color.FromArgb(54, 57, 64);
+            mainLayoutTabPage.Controls.Add(mainLayout);
+            mainLayoutTabPage.Controls.Add(settingsLayout);
+            mainLayoutTabPage.Controls.Add(aboutSpace);
+            mainLayoutTabPage.Controls.Add(exit);
+            mainLayoutTabPage.Dock = DockStyle.Fill;
+            mainLayoutTabPage.DrawMode = TabDrawMode.OwnerDrawFixed;
+            mainLayoutTabPage.FrameColor = Color.FromArgb(41, 50, 63);
+            mainLayoutTabPage.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+            mainLayoutTabPage.ItemSize = new Size(44, 135);
+            mainLayoutTabPage.LineColor = Color.FromArgb(25, 26, 28);
+            mainLayoutTabPage.LineTabColor = Color.FromArgb(54, 57, 64);
+            mainLayoutTabPage.Location = new Point(0, 0);
+            mainLayoutTabPage.Multiline = true;
+            mainLayoutTabPage.Name = "mainLayoutTabPage";
+            mainLayoutTabPage.NormalForeColor = Color.FromArgb(159, 162, 167);
+            mainLayoutTabPage.PageColor = Color.FromArgb(50, 63, 74);
+            mainLayoutTabPage.SelectedIndex = 0;
+            mainLayoutTabPage.Size = new Size(884, 461);
+            mainLayoutTabPage.SizeMode = TabSizeMode.Fixed;
+            mainLayoutTabPage.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighSpeed;
+            mainLayoutTabPage.StringType = StringAlignment.Near;
+            mainLayoutTabPage.TabColor = Color.FromArgb(54, 57, 64);
+            mainLayoutTabPage.TabIndex = 0;
             // 
             // mainLayout
             // 
-            this.mainLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(63)))), ((int)(((byte)(74)))));
-            this.mainLayout.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.mainLayout.Controls.Add(this.mainPanel);
-            this.mainLayout.Location = new System.Drawing.Point(139, 4);
-            this.mainLayout.Name = "mainLayout";
-            this.mainLayout.Padding = new System.Windows.Forms.Padding(3);
-            this.mainLayout.Size = new System.Drawing.Size(741, 453);
-            this.mainLayout.TabIndex = 0;
-            this.mainLayout.Text = "Work space";
+            mainLayout.BackColor = Color.FromArgb(50, 63, 74);
+            mainLayout.BorderStyle = BorderStyle.Fixed3D;
+            mainLayout.Controls.Add(mainPanel);
+            mainLayout.Location = new Point(139, 4);
+            mainLayout.Name = "mainLayout";
+            mainLayout.Padding = new Padding(3);
+            mainLayout.Size = new Size(741, 453);
+            mainLayout.TabIndex = 0;
+            mainLayout.Text = "Work space";
             // 
             // mainPanel
             // 
-            this.mainPanel.Controls.Add(this.toolStrip);
-            this.mainPanel.Controls.Add(this.workSpaceDataGridView);
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(3, 3);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(731, 443);
-            this.mainPanel.TabIndex = 0;
+            mainPanel.Controls.Add(toolStrip);
+            mainPanel.Controls.Add(workSpaceDataGridView);
+            mainPanel.Dock = DockStyle.Fill;
+            mainPanel.Location = new Point(3, 3);
+            mainPanel.Name = "mainPanel";
+            mainPanel.Size = new Size(731, 443);
+            mainPanel.TabIndex = 0;
             // 
             // toolStrip
             // 
-            this.toolStrip.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnMoveFirst,
-            this.btnMovePrevious,
-            this.toolStripSeparator1,
-            this.txtFindRecord,
-            this.toolStripSeparator2,
-            this.btnMoveLast,
-            this.btnMoveNext,
-            this.btnFind,
-            this.toolStripSeparator3});
-            this.toolStrip.Location = new System.Drawing.Point(0, 418);
-            this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(731, 25);
-            this.toolStrip.TabIndex = 1;
+            toolStrip.Dock = DockStyle.Bottom;
+            toolStrip.Items.AddRange(new ToolStripItem[] { btnMoveFirst, btnMovePrevious, toolStripSeparator1, txtFindRecord, toolStripSeparator2, btnMoveLast, btnMoveNext, btnFind, toolStripSeparator3 });
+            toolStrip.Location = new Point(0, 418);
+            toolStrip.Name = "toolStrip";
+            toolStrip.Size = new Size(731, 25);
+            toolStrip.TabIndex = 1;
             // 
             // btnMoveFirst
             // 
-            this.btnMoveFirst.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnMoveFirst.Image = global::PasswordManager.Properties.Resources.icons8_double_left_16;
-            this.btnMoveFirst.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnMoveFirst.Name = "btnMoveFirst";
-            this.btnMoveFirst.Size = new System.Drawing.Size(23, 22);
-            this.btnMoveFirst.ToolTipText = "Move first record";
+            btnMoveFirst.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnMoveFirst.Image = Properties.Resources.icons8_double_left_16;
+            btnMoveFirst.ImageTransparentColor = Color.Magenta;
+            btnMoveFirst.Name = "btnMoveFirst";
+            btnMoveFirst.Size = new Size(23, 22);
+            btnMoveFirst.ToolTipText = "Move first record";
             // 
             // btnMovePrevious
             // 
-            this.btnMovePrevious.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnMovePrevious.Image = global::PasswordManager.Properties.Resources.icons8_prev_16;
-            this.btnMovePrevious.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnMovePrevious.Name = "btnMovePrevious";
-            this.btnMovePrevious.Size = new System.Drawing.Size(23, 22);
-            this.btnMovePrevious.ToolTipText = "Move prev record";
+            btnMovePrevious.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnMovePrevious.Image = Properties.Resources.icons8_prev_16;
+            btnMovePrevious.ImageTransparentColor = Color.Magenta;
+            btnMovePrevious.Name = "btnMovePrevious";
+            btnMovePrevious.Size = new Size(23, 22);
+            btnMovePrevious.ToolTipText = "Move prev record";
             // 
             // toolStripSeparator1
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(6, 25);
             // 
             // txtFindRecord
             // 
-            this.txtFindRecord.AutoSize = false;
-            this.txtFindRecord.Name = "txtFindRecord";
-            this.txtFindRecord.Size = new System.Drawing.Size(150, 25);
-            this.txtFindRecord.ToolTipText = "find record by resource name";
+            txtFindRecord.AutoSize = false;
+            txtFindRecord.Name = "txtFindRecord";
+            txtFindRecord.Size = new Size(150, 25);
+            txtFindRecord.ToolTipText = "find record by resource name";
             // 
             // toolStripSeparator2
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new Size(6, 25);
             // 
             // btnMoveLast
             // 
-            this.btnMoveLast.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnMoveLast.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnMoveLast.Image = global::PasswordManager.Properties.Resources.icons8_double_right_16;
-            this.btnMoveLast.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnMoveLast.Name = "btnMoveLast";
-            this.btnMoveLast.Size = new System.Drawing.Size(23, 22);
-            this.btnMoveLast.ToolTipText = "Move last record";
+            btnMoveLast.Alignment = ToolStripItemAlignment.Right;
+            btnMoveLast.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnMoveLast.Image = Properties.Resources.icons8_double_right_16;
+            btnMoveLast.ImageTransparentColor = Color.Magenta;
+            btnMoveLast.Name = "btnMoveLast";
+            btnMoveLast.Size = new Size(23, 22);
+            btnMoveLast.ToolTipText = "Move last record";
             // 
             // btnMoveNext
             // 
-            this.btnMoveNext.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnMoveNext.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnMoveNext.Image = global::PasswordManager.Properties.Resources.icons8_forward_16;
-            this.btnMoveNext.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnMoveNext.Name = "btnMoveNext";
-            this.btnMoveNext.Size = new System.Drawing.Size(23, 22);
-            this.btnMoveNext.ToolTipText = "Move next record";
+            btnMoveNext.Alignment = ToolStripItemAlignment.Right;
+            btnMoveNext.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnMoveNext.Image = Properties.Resources.icons8_forward_16;
+            btnMoveNext.ImageTransparentColor = Color.Magenta;
+            btnMoveNext.Name = "btnMoveNext";
+            btnMoveNext.Size = new Size(23, 22);
+            btnMoveNext.ToolTipText = "Move next record";
             // 
             // btnFind
             // 
-            this.btnFind.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnFind.Image = global::PasswordManager.Properties.Resources.icons8_search_16;
-            this.btnFind.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(23, 22);
-            this.btnFind.ToolTipText = "Click to find record";
+            btnFind.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnFind.Image = Properties.Resources.icons8_search_16;
+            btnFind.ImageTransparentColor = Color.Magenta;
+            btnFind.Name = "btnFind";
+            btnFind.Size = new Size(23, 22);
+            btnFind.ToolTipText = "Click to find record";
             // 
             // toolStripSeparator3
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            toolStripSeparator3.Name = "toolStripSeparator3";
+            toolStripSeparator3.Size = new Size(6, 25);
             // 
             // workSpaceDataGridView
             // 
-            this.workSpaceDataGridView.AllowUserToAddRows = false;
-            this.workSpaceDataGridView.AllowUserToDeleteRows = false;
-            this.workSpaceDataGridView.AllowUserToOrderColumns = true;
-            this.workSpaceDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.workSpaceDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ResourceName,
-            this.Login,
-            this.Password,
-            this.Link});
-            this.workSpaceDataGridView.ContextMenuStrip = this.dgvContextMenuStrip;
-            this.workSpaceDataGridView.Location = new System.Drawing.Point(-2, 0);
-            this.workSpaceDataGridView.MultiSelect = false;
-            this.workSpaceDataGridView.Name = "workSpaceDataGridView";
-            this.workSpaceDataGridView.ReadOnly = true;
-            this.workSpaceDataGridView.RowTemplate.Height = 25;
-            this.workSpaceDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.workSpaceDataGridView.Size = new System.Drawing.Size(735, 417);
-            this.workSpaceDataGridView.TabIndex = 0;
+            workSpaceDataGridView.AllowUserToAddRows = false;
+            workSpaceDataGridView.AllowUserToDeleteRows = false;
+            workSpaceDataGridView.AllowUserToOrderColumns = true;
+            workSpaceDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            workSpaceDataGridView.Columns.AddRange(new DataGridViewColumn[] { ResourceName, Login, Password, Link });
+            workSpaceDataGridView.ContextMenuStrip = dgvContextMenuStrip;
+            workSpaceDataGridView.Location = new Point(-2, 0);
+            workSpaceDataGridView.MultiSelect = false;
+            workSpaceDataGridView.Name = "workSpaceDataGridView";
+            workSpaceDataGridView.ReadOnly = true;
+            workSpaceDataGridView.RowTemplate.Height = 25;
+            workSpaceDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            workSpaceDataGridView.Size = new Size(735, 417);
+            workSpaceDataGridView.TabIndex = 0;
             // 
             // ResourceName
             // 
-            this.ResourceName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ResourceName.HeaderText = "Resource name";
-            this.ResourceName.Name = "ResourceName";
-            this.ResourceName.ReadOnly = true;
+            ResourceName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ResourceName.HeaderText = "Resource name";
+            ResourceName.Name = "ResourceName";
+            ResourceName.ReadOnly = true;
             // 
             // Login
             // 
-            this.Login.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Login.HeaderText = "Login";
-            this.Login.Name = "Login";
-            this.Login.ReadOnly = true;
+            Login.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Login.HeaderText = "Login";
+            Login.Name = "Login";
+            Login.ReadOnly = true;
             // 
             // Password
             // 
-            this.Password.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Password.HeaderText = "Password";
-            this.Password.Name = "Password";
-            this.Password.ReadOnly = true;
+            Password.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Password.HeaderText = "Password";
+            Password.Name = "Password";
+            Password.ReadOnly = true;
             // 
             // Link
             // 
-            this.Link.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Link.HeaderText = "Link";
-            this.Link.Name = "Link";
-            this.Link.ReadOnly = true;
-            this.Link.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Link.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Link.Text = "";
+            Link.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Link.HeaderText = "Link";
+            Link.Name = "Link";
+            Link.ReadOnly = true;
+            Link.Resizable = DataGridViewTriState.True;
+            Link.SortMode = DataGridViewColumnSortMode.Automatic;
+            Link.Text = "";
             // 
             // dgvContextMenuStrip
             // 
-            this.dgvContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuCopyLogin,
-            this.mnuCopyPassword,
-            this.mnuCopyLink,
-            this.toolStripSeparator_1,
-            this.mnuInsert,
-            this.mnuAdd,
-            this.mnuEdit,
-            this.toolStripSeparator_0,
-            this.mnuDelete});
-            this.dgvContextMenuStrip.Name = "dgvContextMenuStrip";
-            this.dgvContextMenuStrip.Size = new System.Drawing.Size(187, 170);
+            dgvContextMenuStrip.Items.AddRange(new ToolStripItem[] { mnuCopyLogin, mnuCopyPassword, mnuCopyLink, toolStripSeparator_1, mnuInsert, mnuAdd, mnuEdit, toolStripSeparator_0, mnuDelete });
+            dgvContextMenuStrip.Name = "dgvContextMenuStrip";
+            dgvContextMenuStrip.Size = new Size(187, 170);
             // 
             // mnuCopyLogin
             // 
-            this.mnuCopyLogin.Name = "mnuCopyLogin";
-            this.mnuCopyLogin.Size = new System.Drawing.Size(186, 22);
-            this.mnuCopyLogin.Text = "Copy Login value";
-            this.mnuCopyLogin.ToolTipText = "Copy selected Login value";
+            mnuCopyLogin.Name = "mnuCopyLogin";
+            mnuCopyLogin.Size = new Size(186, 22);
+            mnuCopyLogin.Text = "Copy Login value";
+            mnuCopyLogin.ToolTipText = "Copy selected Login value";
             // 
             // mnuCopyPassword
             // 
-            this.mnuCopyPassword.Name = "mnuCopyPassword";
-            this.mnuCopyPassword.Size = new System.Drawing.Size(186, 22);
-            this.mnuCopyPassword.Text = "Copy Password value";
-            this.mnuCopyPassword.ToolTipText = "Copy selected Password value";
+            mnuCopyPassword.Name = "mnuCopyPassword";
+            mnuCopyPassword.Size = new Size(186, 22);
+            mnuCopyPassword.Text = "Copy Password value";
+            mnuCopyPassword.ToolTipText = "Copy selected Password value";
             // 
             // mnuCopyLink
             // 
-            this.mnuCopyLink.Name = "mnuCopyLink";
-            this.mnuCopyLink.Size = new System.Drawing.Size(186, 22);
-            this.mnuCopyLink.Text = "Copy Link value";
-            this.mnuCopyLink.ToolTipText = "Copy selected Link value";
+            mnuCopyLink.Name = "mnuCopyLink";
+            mnuCopyLink.Size = new Size(186, 22);
+            mnuCopyLink.Text = "Copy Link value";
+            mnuCopyLink.ToolTipText = "Copy selected Link value";
             // 
             // toolStripSeparator_1
             // 
-            this.toolStripSeparator_1.Name = "toolStripSeparator_1";
-            this.toolStripSeparator_1.Size = new System.Drawing.Size(183, 6);
+            toolStripSeparator_1.Name = "toolStripSeparator_1";
+            toolStripSeparator_1.Size = new Size(183, 6);
             // 
             // mnuInsert
             // 
-            this.mnuInsert.Name = "mnuInsert";
-            this.mnuInsert.Size = new System.Drawing.Size(186, 22);
-            this.mnuInsert.Text = "Insert item";
-            this.mnuInsert.ToolTipText = "Insert item into collection";
+            mnuInsert.Name = "mnuInsert";
+            mnuInsert.Size = new Size(186, 22);
+            mnuInsert.Text = "Insert item";
+            mnuInsert.ToolTipText = "Insert item into collection";
             // 
             // mnuAdd
             // 
-            this.mnuAdd.Name = "mnuAdd";
-            this.mnuAdd.Size = new System.Drawing.Size(186, 22);
-            this.mnuAdd.Text = "Add item";
-            this.mnuAdd.ToolTipText = "Add item to end of collection";
+            mnuAdd.Name = "mnuAdd";
+            mnuAdd.Size = new Size(186, 22);
+            mnuAdd.Text = "Add item";
+            mnuAdd.ToolTipText = "Add item to end of collection";
             // 
             // mnuEdit
             // 
-            this.mnuEdit.Name = "mnuEdit";
-            this.mnuEdit.Size = new System.Drawing.Size(186, 22);
-            this.mnuEdit.Text = "Edit item";
-            this.mnuEdit.ToolTipText = "Edit current selected item";
+            mnuEdit.Name = "mnuEdit";
+            mnuEdit.Size = new Size(186, 22);
+            mnuEdit.Text = "Edit item";
+            mnuEdit.ToolTipText = "Edit current selected item";
             // 
             // toolStripSeparator_0
             // 
-            this.toolStripSeparator_0.Name = "toolStripSeparator_0";
-            this.toolStripSeparator_0.Size = new System.Drawing.Size(183, 6);
+            toolStripSeparator_0.Name = "toolStripSeparator_0";
+            toolStripSeparator_0.Size = new Size(183, 6);
             // 
             // mnuDelete
             // 
-            this.mnuDelete.Name = "mnuDelete";
-            this.mnuDelete.Size = new System.Drawing.Size(186, 22);
-            this.mnuDelete.Text = "Delete item";
-            this.mnuDelete.ToolTipText = "Delete selected item from collection";
+            mnuDelete.Name = "mnuDelete";
+            mnuDelete.Size = new Size(186, 22);
+            mnuDelete.Text = "Delete item";
+            mnuDelete.ToolTipText = "Delete selected item from collection";
             // 
             // settingsLayout
             // 
-            this.settingsLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(63)))), ((int)(((byte)(74)))));
-            this.settingsLayout.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.settingsLayout.Location = new System.Drawing.Point(139, 4);
-            this.settingsLayout.Name = "settingsLayout";
-            this.settingsLayout.Padding = new System.Windows.Forms.Padding(3);
-            this.settingsLayout.Size = new System.Drawing.Size(741, 453);
-            this.settingsLayout.TabIndex = 1;
-            this.settingsLayout.Text = "Settings";
+            settingsLayout.BackColor = Color.FromArgb(50, 63, 74);
+            settingsLayout.BorderStyle = BorderStyle.Fixed3D;
+            settingsLayout.Location = new Point(139, 4);
+            settingsLayout.Name = "settingsLayout";
+            settingsLayout.Padding = new Padding(3);
+            settingsLayout.Size = new Size(741, 453);
+            settingsLayout.TabIndex = 1;
+            settingsLayout.Text = "Settings";
             // 
             // aboutSpace
             // 
-            this.aboutSpace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(63)))), ((int)(((byte)(74)))));
-            this.aboutSpace.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.aboutSpace.Location = new System.Drawing.Point(139, 4);
-            this.aboutSpace.Name = "aboutSpace";
-            this.aboutSpace.Size = new System.Drawing.Size(741, 453);
-            this.aboutSpace.TabIndex = 2;
-            this.aboutSpace.Text = "About";
+            aboutSpace.BackColor = Color.FromArgb(50, 63, 74);
+            aboutSpace.BorderStyle = BorderStyle.Fixed3D;
+            aboutSpace.Location = new Point(139, 4);
+            aboutSpace.Name = "aboutSpace";
+            aboutSpace.Size = new Size(741, 453);
+            aboutSpace.TabIndex = 2;
+            aboutSpace.Text = "About";
             // 
             // exit
             // 
-            this.exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(63)))), ((int)(((byte)(74)))));
-            this.exit.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.exit.Location = new System.Drawing.Point(139, 4);
-            this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(741, 453);
-            this.exit.TabIndex = 3;
-            this.exit.Text = "Exit";
+            exit.BackColor = Color.FromArgb(50, 63, 74);
+            exit.BorderStyle = BorderStyle.Fixed3D;
+            exit.Location = new Point(139, 4);
+            exit.Name = "exit";
+            exit.Size = new Size(741, 453);
+            exit.TabIndex = 3;
+            exit.Text = "Exit";
             // 
             // mainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 461);
-            this.Controls.Add(this.mainLayoutTabPage);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(900, 500);
-            this.Name = "mainForm";
-            this.Text = "Password manager";
-            this.Load += new System.EventHandler(this.mainForm_Load);
-            this.Resize += new System.EventHandler(this.mainForm_Resize);
-            this.mainLayoutTabPage.ResumeLayout(false);
-            this.mainLayout.ResumeLayout(false);
-            this.mainPanel.ResumeLayout(false);
-            this.mainPanel.PerformLayout();
-            this.toolStrip.ResumeLayout(false);
-            this.toolStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.workSpaceDataGridView)).EndInit();
-            this.dgvContextMenuStrip.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(884, 461);
+            Controls.Add(mainLayoutTabPage);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MinimumSize = new Size(900, 500);
+            Name = "mainForm";
+            Text = "Password manager";
+            Load += mainForm_Load;
+            Resize += mainForm_Resize;
+            mainLayoutTabPage.ResumeLayout(false);
+            mainLayout.ResumeLayout(false);
+            mainPanel.ResumeLayout(false);
+            mainPanel.PerformLayout();
+            toolStrip.ResumeLayout(false);
+            toolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)workSpaceDataGridView).EndInit();
+            dgvContextMenuStrip.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion

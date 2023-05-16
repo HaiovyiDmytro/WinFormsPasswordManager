@@ -2,6 +2,6 @@
 {
     internal class WorkflowCollection
     {
-        public SortableBindingList<BaseEntity>? BaseEntities { get; set; } = new();
+        public SortableBindingList<Entity>? BaseEntities { get; set; } = new();
     }
 }

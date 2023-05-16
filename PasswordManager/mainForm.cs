@@ -15,7 +15,9 @@ namespace PasswordManager
 
         private WorkflowCollection _workflowCollection { get; set; } = new();
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public mainForm(IDirectoryService directoryService, IFileService fileService)
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
             InitializeComponent();
 
@@ -23,15 +25,15 @@ namespace PasswordManager
             _fileService = fileService;
 
             workSpaceDataGridView.AutoGenerateColumns = false;
-            workSpaceDataGridView.Columns[nameof(BaseEntity.ResourceName)].DataPropertyName = nameof(BaseEntity.ResourceName);
-            workSpaceDataGridView.Columns[nameof(BaseEntity.Login)].DataPropertyName = nameof(BaseEntity.Login);
-            workSpaceDataGridView.Columns[nameof(BaseEntity.Password)].DataPropertyName = nameof(BaseEntity.Password);
-            workSpaceDataGridView.Columns[nameof(BaseEntity.Link)].DataPropertyName = nameof(BaseEntity.Link);
+            workSpaceDataGridView.Columns[nameof(Entity.ResourceName)].DataPropertyName = nameof(Entity.ResourceName);
+            workSpaceDataGridView.Columns[nameof(Entity.Login)].DataPropertyName = nameof(Entity.Login);
+            workSpaceDataGridView.Columns[nameof(Entity.Password)].DataPropertyName = nameof(Entity.Password);
+            workSpaceDataGridView.Columns[nameof(Entity.Link)].DataPropertyName = nameof(Entity.Link);
         }
 
         private void mainForm_Resize(object sender, EventArgs e)
         {
-            txtFindRecord.Width = mainPanel.ClientRectangle.Width - btnMoveFirst.Width * 8;
+            InitComponents();
         }
 
         private void mainForm_Load(object sender, EventArgs e)
@@ -43,7 +45,7 @@ namespace PasswordManager
 
             if (!_fileService.FileExists(AppWorkflowFilePath))
             {
-                _ = _fileService.CreateFile(AppWorkflowFilePath);
+                _fileService.CreateFile(AppWorkflowFilePath);
             }
 
             string? fileContent = _fileService.ReadAllText(AppWorkflowFilePath);
@@ -54,9 +56,9 @@ namespace PasswordManager
             }
             else
             {
-                _workflowCollection.BaseEntities = new SortableBindingList<BaseEntity>()
+                _workflowCollection.BaseEntities = new SortableBindingList<Entity>()
                 {
-                    new BaseEntity()
+                    new Entity()
                     {
                         Id = Guid.NewGuid(),
                         Login = "Login",
@@ -66,7 +68,7 @@ namespace PasswordManager
                         CreatedDate = DateTime.Now,
                         UpdatedDate = DateTime.Now
                     },
-                    new BaseEntity()
+                    new Entity()
                     {
                         Id = Guid.NewGuid(),
                         Login = "Login1",
@@ -85,6 +87,11 @@ namespace PasswordManager
             };
             workSpaceDataGridView.DataSource = source;
 
+            InitComponents();
+        }
+
+        private void InitComponents()
+        {
             txtFindRecord.Width = mainPanel.ClientRectangle.Width - btnMoveFirst.Width * 8;
         }
     }

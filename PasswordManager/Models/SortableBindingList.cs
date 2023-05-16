@@ -57,7 +57,7 @@ namespace PasswordManager.Models
         /// <summary>
         /// Gets the property descriptor that is used for sorting the list if sorting is implemented in a derived class; otherwise, returns null
         /// </summary>
-        protected override PropertyDescriptor SortPropertyCore
+        protected override PropertyDescriptor? SortPropertyCore
         {
             get { return _sortProperty; }
         }
@@ -95,21 +95,25 @@ namespace PasswordManager.Models
         private int Compare(T lhs, T rhs)
         {
             var result = OnComparison(lhs, rhs);
+
             //invert if descending
             if (_sortDirection == ListSortDirection.Descending)
+            {
                 result = -result;
+            }
+
             return result;
         }
 
         private int OnComparison(T lhs, T rhs)
         {
-            object? lhsValue = lhs == null ? null : _sortProperty?.GetValue(lhs);
-            object? rhsValue = rhs == null ? null : _sortProperty?.GetValue(rhs);
-            if (lhsValue == null)
+            object? lhsValue = lhs is null ? null : _sortProperty?.GetValue(lhs);
+            object? rhsValue = rhs is null ? null : _sortProperty?.GetValue(rhs);
+            if (lhsValue is null)
             {
-                return (rhsValue == null) ? 0 : -1; //nulls are equal
+                return (rhsValue is null) ? 0 : -1; //nulls are equal
             }
-            if (rhsValue == null)
+            if (rhsValue is null)
             {
                 return 1; //first has value, second doesn't
             }

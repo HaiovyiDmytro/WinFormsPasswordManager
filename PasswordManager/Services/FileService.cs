@@ -5,17 +5,17 @@ namespace PasswordManager.Services
     internal interface IFileService
     {
         bool FileExists(string? path);
-        FileStream CreateFile(string path);
+        void CreateFile(string path);
         string ReadAllText(string path);
     }
 
     internal class FileService : IFileService
     {
-        FileStream IFileService.CreateFile(string path)
+        void IFileService.CreateFile(string path)
         {
             try
             {
-                return File.Create(path);
+                File.Create(path).Dispose();
             }
             catch
             {

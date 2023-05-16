@@ -47,7 +47,9 @@ namespace PasswordManager
         private Label lblForgetMessage;
         private Label lblErrorMessageRegister;
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public loginForm(
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
             IDirectoryService directoryService,
             IFileService fileService,
             ISecretHasherService secretHasherService,
