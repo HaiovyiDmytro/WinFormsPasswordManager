@@ -1,14 +1,14 @@
 ﻿using System.IO;
 
-namespace WPManager.Services
+namespace PasswordManager.Services
 {
-    public interface IDirectoryService
+    internal interface IDirectoryService
     {
         bool DirectoryExists(string? path);
         DirectoryInfo CreateDirectory(string path);
     }
 
-    public class DirectoryService : IDirectoryService
+    internal class DirectoryService : IDirectoryService
     {
         DirectoryInfo IDirectoryService.CreateDirectory(string path)
         {

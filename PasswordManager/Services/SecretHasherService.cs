@@ -2,14 +2,14 @@
 
 namespace WinPassManager.Services
 {
-    public interface ISecretHasherService
+    internal interface ISecretHasherService
     {
         string Hash(string input);
 
         bool Verify(string input, string hashString);
     }
 
-    public class SecretHasherService : ISecretHasherService
+    internal class SecretHasherService : ISecretHasherService
     {
         private const int _saltSize = 16;   // 128 bits
         private const int _keySize = 32;    // 256 bits

@@ -1,19 +1,45 @@
 ﻿using System.IO;
 
-namespace WPManager.Services
+namespace PasswordManager.Services
 {
-    public interface IFileService
+    internal interface IFileService
     {
         bool FileExists(string? path);
+        FileStream CreateFile(string path);
+        string ReadAllText(string path);
     }
 
-    public class FileService : IFileService
+    internal class FileService : IFileService
     {
+        FileStream IFileService.CreateFile(string path)
+        {
+            try
+            {
+                return File.Create(path);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         bool IFileService.FileExists(string? path)
         {
             try
             {
                 return File.Exists(path);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        string IFileService.ReadAllText(string path)
+        {
+            try
+            {
+                return File.ReadAllText(path);
             }
             catch
             {

@@ -3,14 +3,14 @@ using System.Text;
 
 namespace WinPassManager.Services
 {
-    public interface IINIFileService
+    internal interface IINIFileService
     {
         void IniWriteValue(string Section, string Key, string Value, string INIPath);
 
         string IniReadValue(string Section, string Key, string INIPath);
     }
 
-    public class INIFileService : IINIFileService
+    internal class INIFileService : IINIFileService
     {
         [DllImport("kernel32", CharSet = CharSet.Unicode)]
         private static extern long WritePrivateProfileString(

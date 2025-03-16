@@ -3,9 +3,9 @@ using Microsoft.Extensions.Hosting;
 
 using WinPassManager.Services;
 
-using WPManager.Services;
+using PasswordManager.Services;
 
-namespace WPManager
+namespace PasswordManager
 {
     internal static class Program
     {
@@ -24,7 +24,7 @@ namespace WPManager
 
             Application.Run(ServiceProvider.GetRequiredService<loginForm>());
         }
-        public static IServiceProvider? ServiceProvider { get; private set; }
+        internal static IServiceProvider? ServiceProvider { get; private set; }
         static IHostBuilder CreateHostBuilder()
         {
             return Host.CreateDefaultBuilder()

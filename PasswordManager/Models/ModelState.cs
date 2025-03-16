@@ -2,11 +2,11 @@
 
 namespace WinPassManager.Models
 {
-    public static class ModelState
+    internal static class ModelState
     {
-        public static List<string?> ErrorMessages = new();
+        internal static List<string?> ErrorMessages = new();
 
-        public static bool IsValid<T>(T model)
+        internal static bool IsValid<T>(T model)
         {
             if (model is null)
             {
