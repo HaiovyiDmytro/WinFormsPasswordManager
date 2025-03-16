@@ -5,16 +5,16 @@ namespace PasswordManager.Services
     internal interface IDirectoryService
     {
         bool DirectoryExists(string? path);
-        DirectoryInfo CreateDirectory(string path);
+        bool CreateDirectory(string path);
     }
 
     internal class DirectoryService : IDirectoryService
     {
-        DirectoryInfo IDirectoryService.CreateDirectory(string path)
+        bool IDirectoryService.CreateDirectory(string path)
         {
             try
             {
-                return Directory.CreateDirectory(path);
+                return Directory.CreateDirectory(path) is not null;
             }
             catch
             {

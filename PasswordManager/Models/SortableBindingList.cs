@@ -95,9 +95,13 @@ namespace PasswordManager.Models
         private int Compare(T lhs, T rhs)
         {
             var result = OnComparison(lhs, rhs);
+
             //invert if descending
             if (_sortDirection == ListSortDirection.Descending)
+            {
                 result = -result;
+            }
+
             return result;
         }
 
